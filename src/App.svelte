@@ -1,0 +1,19 @@
+<script lang="ts">
+  import Navbar from "./components/navbar.svelte";
+  import Home from "./pages/Home.svelte";
+</script>
+
+<main>
+  <Navbar />
+  <Home />
+</main>
+
+<style>
+  main {
+    margin: 0 auto;
+    padding: 0;
+  }
+  :global(body) {
+    padding: 0;
+  }
+</style>

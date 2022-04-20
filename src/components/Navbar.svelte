@@ -23,16 +23,16 @@
     padding: 15px;
     font-size: 22px;
   }
-  a {
+  /* a {
     color: black;
     font-weight: 400;
     padding: 15px;
     text-decoration: none;
-  }
-  a:hover {
+  } */
+  /* a:hover {
     font-weight: 700;
   }
   a:visited {
     color: black;
-  }
+  } */
 </style>

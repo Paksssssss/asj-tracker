@@ -1,15 +1,15 @@
 <script lang="ts">
   import Textfield from "@smui/textfield";
-  import Radio from "@smui/radio";
-  import FormField from "@smui/form-field";
-  import { TradeDirection } from "lib/types/Dashboard";
-  const directionOptions = [
-    { label: "Buy", value: TradeDirection.BUY },
-    { label: "Sell", value: TradeDirection.SELL },
-  ];
+  // import Radio from "@smui/radio";
+  // import FormField from "@smui/form-field";
+  // import { TradeDirection } from "lib/types/Dashboard";
+  // const directionOptions = [
+  //   { label: "Buy", value: TradeDirection.BUY },
+  //   { label: "Sell", value: TradeDirection.SELL },
+  // ];
   let capital = 0.0;
   let percentageTake = 0.0;
-  let direction = TradeDirection.BUY;
+  // let direction = TradeDirection.BUY;
   $: lotSize = Math.floor((capital / 830) * 100) / 100;
   $: commision = lotSize * 30;
   $: desiredGains = capital * (percentageTake / 100);

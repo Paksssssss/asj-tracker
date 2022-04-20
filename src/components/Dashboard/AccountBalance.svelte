@@ -1,6 +1,6 @@
 <script lang="ts">
   import Button, { Label } from "@smui/button";
-  let usePhp = false;
+  // let usePhp = false;
   let startCapital = 0;
   let addedCapital = 0;
   let todayTrade = 0;

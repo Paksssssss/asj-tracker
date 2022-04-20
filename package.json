@@ -12,8 +12,8 @@
     "smui-theme-dark": "smui-theme compile public/build/smui-dark.css -i src/theme/dark"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^17.0.0",
-    "@rollup/plugin-node-resolve": "^11.0.0",
+    "@rollup/plugin-commonjs": "^17.1.0",
+    "@rollup/plugin-node-resolve": "^11.2.1",
     "@rollup/plugin-typescript": "^8.0.0",
     "@smui/button": "^6.0.0-beta.16",
     "@smui/layout-grid": "^6.0.0-beta.16",
@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "@smui/form-field": "^6.0.0-beta.16",
+    "rollup-plugin-includepaths": "^0.2.4",
     "sirv-cli": "^2.0.0",
     "svelte-material-ui": "^6.0.0-beta.16"
   },

@@ -6,6 +6,14 @@ import { terser } from 'rollup-plugin-terser';
 import sveltePreprocess from 'svelte-preprocess';
 import typescript from '@rollup/plugin-typescript';
 import css from 'rollup-plugin-css-only';
+import includePaths from 'rollup-plugin-includepaths';
+
+let includePathOptions = {
+    include: {},
+    paths: ['src'],
+    external: [],
+    extensions: ['.svelte']
+};
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -57,13 +65,15 @@ export default {
 		// https://github.com/rollup/plugins/tree/master/packages/commonjs
 		resolve({
 			browser: true,
-			dedupe: ['svelte']
+			dedupe: ['svelte'],
+			exportConditions: ['default', 'module', 'require', 'import']
 		}),
 		commonjs(),
 		typescript({
-			sourceMap: !production,
-			inlineSources: !production
+			inlineSources: !production,
 		}),
+
+		includePaths(includePathOptions),
 
 		// In dev mode, call `npm run start` once
 		// the bundle has been generated
@@ -76,6 +86,7 @@ export default {
 		// If we're building for production (npm run build
 		// instead of npm run dev), minify
 		production && terser()
+
 	],
 	watch: {
 		clearScreen: false

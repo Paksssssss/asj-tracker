@@ -71,6 +71,7 @@ export default {
 		commonjs(),
 		typescript({
 			inlineSources: !production,
+			sourceMap: !production,
 		}),
 
 		includePaths(includePathOptions),

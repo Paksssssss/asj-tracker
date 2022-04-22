@@ -2,7 +2,7 @@
   import LayoutGrid, { Cell } from "@smui/layout-grid";
   import Button, { Label } from "@smui/button";
   import AccountBalance from "components/Dashboard/AccountBalance.svelte";
-  import TradeHelper from "components/Dashboard/TradeHelper.svelte";
+  import TradeHelper from "components/Dashboard/TradeHelper/index.svelte";
   let updatingValues = false;
 </script>
 

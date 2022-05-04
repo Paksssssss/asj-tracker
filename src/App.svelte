@@ -1,11 +1,13 @@
 <script lang="ts">
-  import Navbar from "./components/Navbar.svelte";
-  import Home from "./pages/Home.svelte";
+  import Cookies from "components/Cookies.svelte";
+  import Navbar from "components/Navbar.svelte";
+  import Home from "pages/Home.svelte";
 </script>
 
 <main>
   <Navbar />
   <Home />
+  <Cookies />
 </main>
 
 <style>

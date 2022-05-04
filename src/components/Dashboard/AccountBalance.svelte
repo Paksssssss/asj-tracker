@@ -1,43 +1,51 @@
 <script lang="ts">
+  import { createEventDispatcher, onDestroy } from "svelte";
   import Button, { Label } from "@smui/button";
-  // let usePhp = false;
-  let startCapital = 0;
-  let addedCapital = 0;
-  let todayTrade = 0;
-  let currentAccValue = 0;
-  let income = 0;
+  import { dashboardSummary } from "store/dashboard";
+
+  const dispatch = createEventDispatcher();
+
+  const onEditClick = () => {
+    dispatch("onEditClick", {
+      editMode: true,
+    });
+  };
+  const unsub = dashboardSummary.subscribe((values) => console.log(values));
+  onDestroy(unsub);
 </script>
 
 <div class="account-actions">
-  <Button color="secondary" variant="text"><Label>Edit</Label></Button>
+  <Button color="secondary" variant="text" on:click={onEditClick}>
+    <Label>Edit</Label>
+  </Button>
 </div>
 <div class="account-balance">
   <div class="balance-col">
     <div>
       <span class="amount-label">Starting Capital:</span>
-      <span class="amount-value">${startCapital}</span>
+      <span class="amount-value">${$dashboardSummary.startingCapital}</span>
     </div>
     <br />
     <div>
       <span class="amount-label">Added Capital:</span>
-      <span class="amount-value">${addedCapital}</span>
+      <span class="amount-value">${$dashboardSummary.addedCapital}</span>
     </div>
     <br />
   </div>
   <div class="balance-col">
     <div>
       <span class="amount-label">Today's Trade Income:</span>
-      <span class="amount-value">${todayTrade}</span>
+      <span class="amount-value">${$dashboardSummary.todayIncome}</span>
     </div>
     <br />
     <div>
       <span class="amount-label">Current Account Value:</span>
-      <span class="amount-value">${currentAccValue}</span>
+      <span class="amount-value">${$dashboardSummary.accountValue}</span>
     </div>
     <br />
     <div>
       <span class="amount-label">Total Income:</span>
-      <span class="amount-value">${income}</span>
+      <span class="amount-value">${$dashboardSummary.totalIncome}</span>
     </div>
     <br />
   </div>

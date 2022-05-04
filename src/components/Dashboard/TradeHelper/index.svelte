@@ -12,7 +12,6 @@
   ];
 
   let calcType = CalculatorType.PERCENTAGE;
-  $: console.log(calcType);
 </script>
 
 <div class="daily-helper">

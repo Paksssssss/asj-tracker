@@ -1,9 +1,10 @@
 <script lang="ts">
-  import { createEventDispatcher, onDestroy } from "svelte";
+  import { createEventDispatcher, onDestroy, onMount } from "svelte";
   import Button, { Label } from "@smui/button";
   import { dashboardSummary } from "store/dashboard";
 
-  const dispatch = createEventDispatcher();
+  const dispatch =
+    createEventDispatcher<{ onEditClick: { editMode: boolean } }>();
 
   const onEditClick = () => {
     dispatch("onEditClick", {
@@ -11,6 +12,10 @@
     });
   };
   const unsub = dashboardSummary.subscribe((values) => console.log(values));
+
+  onMount(() => {
+    dashboardSummary.initializeDashboard();
+  });
   onDestroy(unsub);
 </script>
 

@@ -17,6 +17,7 @@
       label="Capital"
       prefix="$"
       input$pattern={"\\d+(\\.\\d{2})?"}
+      inputmode="numeric"
     />
   </div>
   <div class="field-wrapper">
@@ -26,6 +27,7 @@
       label="Pip Goal"
       suffix="%"
       input$pattern={"\\d+(\\.\\d{2})?"}
+      inputmode="numeric"
     />
   </div>
 </div>
@@ -40,7 +42,7 @@
   </div>
   <div class="data-group">
     <span class="amount-label">Net Profit: </span>
-    <span class="amount-value">{netProfit}</span>
+    <span class="amount-value">{netProfit.toFixed(2)}</span>
   </div>
   <div class="data-group">
     <span class="amount-label">Closed Profit: </span>

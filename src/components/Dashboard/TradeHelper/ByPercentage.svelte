@@ -18,6 +18,7 @@
       label="Capital"
       prefix="$"
       input$pattern={"\\d+(\\.\\d{2})?"}
+      inputmode="numeric"
     />
   </div>
   <div class="field-wrapper">
@@ -27,6 +28,7 @@
       label="Desired Gains (%)"
       suffix="%"
       input$pattern={"\\d+(\\.\\d{2})?"}
+      inputmode="numeric"
     />
   </div>
 </div>

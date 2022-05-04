@@ -1,12 +1,19 @@
 <script lang="ts">
   import Textfield from "@smui/textfield";
+  import { TradeDirection } from "lib/types/Dashboard";
+  export let tradeDirection;
   let capital = 0.0;
   let gains = 0.0;
+  let open = 0.0;
   // let direction = TradeDirection.BUY;
   $: lotSize = Math.floor((capital / 830) * 100) / 100;
   $: commision = lotSize * 30;
   $: netProfit = commision + gains;
   $: pipsNeeded = Math.floor(netProfit / lotSize) || 0;
+  $: closingValue =
+    tradeDirection === TradeDirection.BUY
+      ? open + pipsNeeded * 0.00001
+      : open - pipsNeeded * 0.00001;
 </script>
 
 <div class="form-content">
@@ -28,6 +35,14 @@
       input$pattern={"\\d+(\\.\\d{2})?"}
     />
   </div>
+  <div class="field-wrapper">
+    <Textfield
+      style="width: 100%;"
+      bind:value={open}
+      label="Open Value"
+      input$pattern={"\\d+(\\.\\d{2})?"}
+    />
+  </div>
 </div>
 <div class="calc-content">
   <div class="data-group">
@@ -46,6 +61,12 @@
     <span class="amount-label">Pips Needed: </span>
     <span class="amount-value">{pipsNeeded}</span>
   </div>
+  {#if open}
+    <div class="data-group">
+      <span class="amount-label">Close At or TP: </span>
+      <span class="amount-value">{closingValue.toFixed(5)}</span>
+    </div>
+  {/if}
 </div>
 
 <style>

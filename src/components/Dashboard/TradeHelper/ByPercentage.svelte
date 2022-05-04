@@ -1,7 +1,7 @@
 <script lang="ts">
   import Textfield from "@smui/textfield";
   import { TradeDirection } from "lib/types/Dashboard";
-  export let tradeDirection;
+  export let tradeDirection: TradeDirection;
   let capital = 0.0;
   let percentageTake = 0.0;
   let open = 0.0;

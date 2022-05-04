@@ -46,11 +46,11 @@
     </Select>
   </div>
   {#if calcType === CalculatorType.PERCENTAGE}
-    <ByPercentage />
+    <ByPercentage {tradeDirection} />
   {:else if calcType === CalculatorType.PIPS}
-    <ByPips />
+    <ByPips {tradeDirection} />
   {:else if calcType === CalculatorType.GAINS}
-    <ByGains />
+    <ByGains {tradeDirection} />
   {/if}
 </div>
 

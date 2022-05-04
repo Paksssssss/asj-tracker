@@ -43,6 +43,8 @@
       bind:value={open}
       label="Open Value"
       input$pattern={"\\d+(\\.\\d{2})?"}
+      type="number"
+      inputmode="numeric"
     />
   </div>
 </div>

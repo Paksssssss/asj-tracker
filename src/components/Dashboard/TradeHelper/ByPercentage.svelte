@@ -39,7 +39,9 @@
     />
   </div>
   <div class="field-wrapper">
-    <Textfield style="width: 100%;" bind:value={open} label="Open Value" />
+    <Textfield style="width: 100%;" bind:value={open} label="Open Value" 
+    type="number"
+    inputmode="numeric"/>
   </div>
 </div>
 <div class="calc-content">

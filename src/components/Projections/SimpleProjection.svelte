@@ -20,9 +20,11 @@
     labels: projectionValues.map((pro) => pro.label),
     datasets: [
       {
+        name: 'Capital Projection',
         values: projectionValues.map((pro) => pro.capital),
       },
       {
+        name: 'Income',
         values: projectionValues.map((pro) => pro.gain),
       },
     ],

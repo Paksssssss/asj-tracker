@@ -5,6 +5,7 @@
   import AccountBalance from "components/Dashboard/AccountBalance.svelte";
   import TradeHelper from "components/Dashboard/TradeHelper/index.svelte";
   import UpdateDashboard from "components/Dashboard/UpdateDashboard.svelte";
+  import SimpleProjection from "components/Projections/SimpleProjection.svelte";
   import { DashboardTabs } from "lib/types/Dashboard";
   const tabs = [
     DashboardTabs.HOME,
@@ -53,6 +54,8 @@
     </div>
   </Cell> -->
   </LayoutGrid>
+{:else if currentTab === DashboardTabs.PROJECTIONS}
+  <SimpleProjection />
 {/if}
 
 <style>

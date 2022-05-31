@@ -5,6 +5,7 @@
   import Slider from "@smui/slider";
   import FormField from "@smui/form-field";
   import { calculateAverageProjection } from "lib/utils/projections";
+  import { onDestroy } from "svelte";
   let capital = 0;
   let projectDays = 5;
   let averagePips = 60;
@@ -20,16 +21,17 @@
     labels: projectionValues.map((pro) => pro.label),
     datasets: [
       {
-        name: 'Capital Projection',
+        name: "Capital Projection",
         values: projectionValues.map((pro) => pro.capital),
       },
       {
-        name: 'Income',
+        name: "Income",
         values: projectionValues.map((pro) => pro.gain),
       },
     ],
   };
   $: console.log();
+  onDestroy(unsDash);
 </script>
 
 <div class="projection-container">
